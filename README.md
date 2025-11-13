@@ -10,16 +10,16 @@ mothership-prod-terraform/
 ├── variables.tf          # Global input variables shared across modules
 ├── main.tf               # Root module wiring — calls each service module
 │
-├── networking/           # VPC, subnets, route tables, NAT gateways, ACLs
+├── networking/           # VPC, private subnets, and route tables
 │   └── main.tf
 │
-├── endpoints/            # Private VPC endpoints for S3, DDB, STS, CloudWatch
+├── endpoints/            # Private VPC endpoints for S3, DDB
 │   └── main.tf
 │
 ├── storage/              # S3 buckets, DynamoDB tables, and IAM policies
 │   └── main.tf
 │
-├── lambda/               # Lambda function, IAM role, and VPC config
+├── lambda/               # Lambda function, IAM role.
 │   ├── main.tf
 │   └── lambda_function.py
 │
