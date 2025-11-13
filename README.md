@@ -1,31 +1,32 @@
 # us-elderly-care-prod-aws-terraform
 IaC(Terraform) code of the US Elderly care PROD AWS account
 
+## 📁 Folder Structure
 
+```plaintext
 mothership-prod-terraform/
 │
-├── provider.tf
-├── variables.tf
-├── main.tf
+├── provider.tf           # Terraform backend & provider configuration
+├── variables.tf          # Global input variables shared across modules
+├── main.tf               # Root module wiring — calls each service module
 │
-├── networking/
+├── networking/           # VPC, subnets, route tables, NAT gateways, ACLs
 │   └── main.tf
 │
-├── endpoints/
+├── endpoints/            # Private VPC endpoints for S3, DDB, STS, CloudWatch
 │   └── main.tf
 │
-├── storage/
+├── storage/              # S3 buckets, DynamoDB tables, and IAM policies
 │   └── main.tf
 │
-├── lambda/
+├── lambda/               # Lambda function, IAM role, and VPC config
 │   ├── main.tf
 │   └── lambda_function.py
 │
-├── apigateway/
+├── apigateway/           # API Gateway integration with Lambda
 │   └── main.tf
 │
-├── stepfunctions/
-│   └── main.tf
-│
-└── security/
+├── stepfunctions/        # State machine workflows for orchestration
     └── main.tf
+```
+
