@@ -11,22 +11,29 @@ mothership-prod-terraform/
 ├── main.tf               # Root module wiring — calls each service module
 │
 ├── networking/           # VPC, private subnets, and route tables
-│   └── main.tf
+│   ├── main.tf
+│   └── variables.tf
 │
 ├── endpoints/            # Private VPC endpoints for S3, DDB
-│   └── main.tf
+│   ├── main.tf
+│   └── variables.tf
 │
 ├── storage/              # S3 buckets, DynamoDB tables, and IAM policies
-│   └── main.tf
+│   ├── main.tf
+│   └── variables.tf
 │
 ├── lambda/               # Lambda function, IAM role.
 │   ├── main.tf
+│   ├── variables.tf
 │   └── lambda_function.py
 │
 ├── apigateway/           # API Gateway integration with Lambda
-│   └── main.tf
+│   ├── main.tf
+│   └── variables.tf
 │
 ├── stepfunctions/        # State machine workflows for orchestration
-    └── main.tf
+│   ├── main.tf
+│   └── variables.tf
+
 ```
 
