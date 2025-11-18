@@ -19,7 +19,7 @@ module "lambda" {
   project            = var.project
   env                = var.env
   vpc_id             = module.vpc.vpc_id
-  private_subnet_ids = module.vpc.private_route_table_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
 }
 
 module "s3-ddb" {
@@ -42,8 +42,3 @@ module "stepfunctions" {
   lambda_arn = module.lambda.lambda_arn
 }
 
-module "security" {
-  source  = "./07-security"
-  project = var.project
-  env     = var.env
-}
