@@ -24,6 +24,8 @@ module "lambda" {
   s3_bucket_arn      = module.s3_ddb.raw_audio_bucket_arn
   s3_bucket_name     = module.s3_ddb.raw_audio_bucket_name
   dynamodb_table_arn = module.s3_ddb.patient_data_table_arn
+
+
 }
 
 module "s3_ddb" {
@@ -36,13 +38,8 @@ module "apigateway" {
   source     = "./05-apigateway"
   project    = var.project
   env        = var.env
-  lambda_arn = module.lambda.lambda_arn
+  lambda_arn    = module.lambda.lambda_arn
+  lambda_invoke_arn = module.lambda.lambda_arn
 }
 
-module "stepfunctions" {
-  source     = "./06-stepfunctions"
-  project    = var.project
-  env        = var.env
-  lambda_arn = module.lambda.lambda_arn
-}
 
