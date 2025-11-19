@@ -24,3 +24,14 @@ variable "lambda_role_arn" {
   description = "Lambda execution role allowed to decrypt S3 objects"
   type        = string
 }
+
+variable "common_tags" {
+  description = "Common tags to apply to all resources."
+  type        = map(string)
+
+  default = {
+    ManagedBy         = "Terraform"
+    Owner             = "Ray Kim"
+    Team              = "AWS Cloud Engineering"
+  }
+}

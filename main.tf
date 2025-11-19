@@ -42,3 +42,12 @@ module "apigateway" {
   lambda_invoke_arn = module.lambda.lambda_arn
 }
 
+locals {
+  tags = merge(
+    var.common_tags,
+    {
+      Project     = var.project
+      Environment = terraform.workspace
+    }
+  )
+}
