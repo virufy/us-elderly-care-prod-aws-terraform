@@ -42,4 +42,3 @@ module "apigateway" {
   lambda_invoke_arn = module.lambda.lambda_arn
 }
 
-
