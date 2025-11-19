@@ -3,6 +3,5 @@
 .terraform.lock.hcl
 .terraform
 
-
 03-lambda/lambda_function.py
 03-lambda/lambda_function_payload.zip
