@@ -58,7 +58,7 @@ resource "aws_apigatewayv2_route" "lambda_route_sfn" {
 
 # 4 Allow API Gateway to invoke Lambda
 resource "aws_lambda_permission" "allow_apigw_invoke" {
-  statement_id  = "AllowExecutionFromAPIGateway"
+  statement_id = "AllowAPIGW-${var.env}"
   action        = "lambda:InvokeFunction"
   function_name = var.lambda_arn              # <– Use Lambda ARN (NOT invoke ARN)
   principal     = "apigateway.amazonaws.com"
