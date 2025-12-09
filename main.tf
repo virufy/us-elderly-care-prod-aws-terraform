@@ -42,6 +42,12 @@ module "apigateway" {
   lambda_invoke_arn = module.lambda.lambda_arn
 }
 
+module "amplify" {
+  source = "./08-amplify"
+  project = var.project
+  env = var.env
+}
+
 locals {
   tags = merge(
     var.common_tags,
